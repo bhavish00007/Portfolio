@@ -45,5 +45,7 @@ This portfolio highlights:
 ## Author
 
 **Bhavish R K**
+
 GitHub: https://github.com/bhavish00007
+
 LinkedIn: https://linkedin.com/in/bhavish-r-k-576b8a293
