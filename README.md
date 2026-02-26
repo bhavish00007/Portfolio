@@ -1,55 +1,49 @@
 # Bhavish R K – Portfolio
 
-A modern developer portfolio built with React + Vite.
+Personal developer portfolio built with **React + Vite**, showcasing my projects, skills, and experience in **Full Stack Development and AI Integration**.
 
-## 🚀 Getting Started
-
-### 1. Install dependencies
-```bash
-npm install
-```
-
-### 2. Run development server
-```bash
-npm run dev
-```
-
-Then open **http://localhost:5173** in your browser.
-
-### 3. Build for production
-```bash
-npm run build
-```
-
-### 4. Preview production build
-```bash
-npm run preview
-```
+🔗 Live: (add your deployed link here)
 
 ---
 
-## 📁 Project Structure
+## Tech Stack
+
+* React
+* Vite
+* JavaScript (ES6+)
+* Responsive Design
+* Modern UI (Dark Theme)
+
+## Project Structure
 
 ```
 portfolio/
 ├── public/
-│   └── favicon.svg
+│   ├── resume.pdf
+│   └── me.jpg
 ├── src/
-│   ├── App.jsx        ← Main portfolio component (all sections)
-│   └── main.jsx       ← React entry point
+│   ├── components/
+│   ├── constants/
+│   ├── data/
+│   ├── App.jsx
+│   └── main.jsx
 ├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
+└── package.json
 ```
 
-## 🛠 Tech Stack
-- React 18
-- Vite 5
-- Google Fonts (Sora, JetBrains Mono, Inter)
-- Pure inline styles (no extra CSS framework needed)
 
-## 📝 Customization
-- Update your **resume link** in `App.jsx` → Hero section (`href="https://drive.google.com/your-resume-link"`)
-- Update your **LinkedIn URL** in the Contact and Footer sections
-- All content is in `src/App.jsx`
+## About
+
+This portfolio highlights:
+
+* Full Stack Projects (React, Node.js, MongoDB)
+* AI-integrated applications
+* Open source contributions
+
+---
+
+## Author
+
+**Bhavish R K**
+GitHub: https://github.com/bhavish00007
+LinkedIn: https://linkedin.com/in/bhavish-r-k-576b8a293
