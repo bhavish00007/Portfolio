@@ -2,7 +2,7 @@
 
 Personal developer portfolio built with **React + Vite**, showcasing my projects, skills, and experience in **Full Stack Development and AI Integration**.
 
-🔗 Live: (add your deployed link here)
+🔗 Live: https://bhavish07portfolio.vercel.app
 
 ---
 
