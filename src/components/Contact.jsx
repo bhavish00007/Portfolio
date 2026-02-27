@@ -12,6 +12,8 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const FORMSPREE_URL = 'https://formspree.io/f/mbdabjzg';
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -23,23 +25,27 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to send email');
+        throw new Error(data.error || 'Failed to send message');
       }
 
       setSent(true);
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSent(false), 3000);
+      setTimeout(() => setSent(false), 4000);
     } catch (err) {
-      setError(err.message || 'Error sending email');
-      console.error('Error:', err);
+      setError('Failed to send message. Please try again.');
+      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -47,7 +53,7 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: '⭐', label: 'GitHub', href: 'https://github.com/bhavish00007', color: '#fff' },
-    { icon: '💼', label: 'LinkedIn', href: 'https://linkedin.com/in/bhavish-rk', color: '#0A66C2' },
+    { icon: '💼', label: 'LinkedIn', href: 'https://linkedin.com/in/bhavish-r-k-576b8a293', color: '#0A66C2' },
     { icon: '📧', label: 'Email', href: 'mailto:bhavishkolpe@gmail.com', color: '#E11D48' },
   ];
 
@@ -83,16 +89,15 @@ const Contact = () => {
             fontSize: FONT_SIZE.md,
           }}
         >
-          Open to full-time roles, freelance, and interesting collabs. I usually respond within 24
-          hours.
+          Open to full-time roles, freelance, and collaborations. I usually respond within 24 hours.
         </p>
 
         <div
-          className="contact-grid"
           style={{
             display: 'flex',
             gap: '4rem',
             alignItems: 'flex-start',
+            flexWrap: 'wrap',
           }}
         >
           {/* Form */}
@@ -103,6 +108,7 @@ const Contact = () => {
               display: 'flex',
               flexDirection: 'column',
               gap: SPACING.lg,
+              minWidth: 300,
             }}
           >
             <input
@@ -149,25 +155,22 @@ const Contact = () => {
                 fontSize: FONT_SIZE.sm,
                 letterSpacing: LETTER_SPACING.medium,
                 cursor: loading ? 'not-allowed' : 'pointer',
-                transition: 'all 0.3s',
                 opacity: loading ? 0.7 : 1,
+                transition: 'all 0.3s',
               }}
-              onMouseEnter={(e) => !sent && !loading && (e.currentTarget.style.transform = 'translateY(-2px)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
             >
-              {loading ? 'Sending...' : sent ? '✓ Email Sent!' : 'Send Message →'}
+              {loading ? 'Sending...' : sent ? '✓ Message Sent!' : 'Send Message →'}
             </button>
 
             {error && (
-              <div style={{ color: '#EF4444', fontSize: FONT_SIZE.sm, marginTop: '0.5rem' }}>
+              <div style={{ color: '#EF4444', fontSize: FONT_SIZE.sm }}>
                 {error}
               </div>
             )}
           </form>
 
-          {/* Info sidebar */}
-          <div style={{ width: 280, flexShrink: 0 }}>
-            {/* Location card */}
+          {/* Sidebar */}
+          <div style={{ width: 280 }}>
             <div
               style={{
                 background: COLORS.bg.card,
@@ -202,7 +205,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social card */}
             <div
               style={{
                 background: COLORS.bg.card,
@@ -229,6 +231,8 @@ const Contact = () => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -236,10 +240,7 @@ const Contact = () => {
                       fontFamily: FONTS.mono,
                       fontSize: FONT_SIZE.lg,
                       color: COLORS.text.secondary,
-                      transition: 'color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = social.color)}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = COLORS.text.secondary)}
                   >
                     <span>{social.icon}</span>
                     {social.label}
