@@ -90,7 +90,7 @@ const About = () => {
   style={{
     fontFamily: FONTS.mono,
     fontSize: FONT_SIZE.xs - 0.05,
-    color: '#2DD4F7', 
+    color: '#38BDF8', 
     letterSpacing: LETTER_SPACING.xl,
     marginTop: 6,
   }}
