@@ -75,28 +75,28 @@ const About = () => {
               </div>
 
               {/* Name & title */}
-              <span
-                style={{
-                  fontFamily: FONTS.mono,
-                  fontSize: FONT_SIZE.xs,
-                  color: COLORS.text.ghost,
-                  letterSpacing: LETTER_SPACING['2xl'],
-                  textTransform: 'uppercase',
-                }}
-              >
-                Bhavish R K
-              </span>
-              <span
-                style={{
-                  fontFamily: FONTS.mono,
-                  fontSize: FONT_SIZE.xs - 0.05,
-                  color: COLORS.text.muted,
-                  letterSpacing: LETTER_SPACING.xl,
-                  marginTop: 6,
-                }}
-              >
-                Full Stack Dev
-              </span>
+         <span
+  style={{
+    fontFamily: FONTS.mono,
+    fontSize: FONT_SIZE.xs,
+    color: '#ffffff', 
+    letterSpacing: LETTER_SPACING['2xl'],
+    textTransform: 'uppercase',
+  }}
+>
+  Bhavish R K
+</span>
+<span
+  style={{
+    fontFamily: FONTS.mono,
+    fontSize: FONT_SIZE.xs - 0.05,
+    color: '#ffffff', 
+    letterSpacing: LETTER_SPACING.xl,
+    marginTop: 6,
+  }}
+>
+  Full Stack Dev
+</span>
 
               {/* Corner decorations */}
               <div
