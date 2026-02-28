@@ -36,9 +36,9 @@ portfolio/
 
 This portfolio highlights:
 
-* Full Stack Projects (React, Node.js, MongoDB)
-* AI-integrated applications
-* Open source contributions
+* Full Stack Projects (React, Node.js, MongoDB).
+* AI-integrated applications.
+* Open source contributions.
 
 ---
 
