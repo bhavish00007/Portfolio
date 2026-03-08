@@ -12,7 +12,7 @@ Personal developer portfolio built with **React + Vite**, showcasing my projects
 * Vite
 * JavaScript (ES6+)
 * Responsive Design
-* Modern UI (Dark Theme)
+* Modern UI (Dark Theme).
 
 ## Project Structure
 
