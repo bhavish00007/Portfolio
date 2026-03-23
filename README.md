@@ -1,4 +1,4 @@
-# Bhavish R K – Portfolio.
+# Bhavish R K – Portfolio
 
 Personal developer portfolio built with **React + Vite**, showcasing my projects, skills, and experience in **Full Stack Development and AI Integration** 
 
